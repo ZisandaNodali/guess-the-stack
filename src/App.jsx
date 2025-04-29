@@ -44,6 +44,17 @@ function App() {
         <div className="result">
           <h2>Game Over</h2>
           <p>Your score: {score} / {quizData.length}</p>
+           {/* ✅ Show correct answers after game over */}
+          <div className="all-answers">
+            <h3>Correct Answers:</h3>
+            {quizData.map((question) => (
+              <div key={question.id} className="answer-card">
+                <h4>{question.appName}</h4>
+                <p>Frontend: {question.correctAnswers.frontend}</p>
+                <p>Backend: {question.correctAnswers.backend}</p>
+              </div>
+            ))}
+          </div>
         </div>
       ) : (
         <QuizCard

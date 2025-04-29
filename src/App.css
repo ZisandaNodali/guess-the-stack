@@ -1,38 +1,123 @@
+/* Ensure html and body fill the entire viewport */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background-color: #000;
+  font-family: 'Inter', sans-serif;
+  color: white;
+}
+
+/* Centering the app */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 0rem 1rem 2rem; /* top padding set to 0 */
+  overflow-y: auto;
+}
+/* App wrapper */
 .app {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-family: sans-serif;
+  width: 100%;
+  max-width: 400px;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
 }
 
+
+/* Quiz Card */
 .quiz-card {
-  background: #f9f9f9;
-  border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background: #1e1e1e;
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 0 15px rgba(0, 247, 255, 0.15);
 }
 
+/* Headings */
 .quiz-card h2 {
   margin-bottom: 0.5rem;
+  font-size: 2rem;
+  text-align: center;
 }
 
-.quiz-card label {
-  display: block;
-  margin: 0.3rem 0;
+.quiz-card p {
+  font-size: 0.95rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #ccc;
 }
 
-button {
+.quiz-card h4 {
   margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #00f7ff;
+}
+
+/* Option Buttons */
+.option-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #222;
+  color: white;
+  padding: 10px 16px;
+  margin: 8px 0;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 2px solid #333;
+  transition: border 0.2s, background-color 0.2s;
+}
+
+.option-button:hover {
+  border-color: #00f7ff;
+  background-color: #2a2a2a;
+}
+
+/* Highlight the selected option */
+.option-button.selected {
+  background-color: #4caf50; /* Green background for selected */
+  border-color: #4caf50;     /* Match border with background */
+  color: white;              /* Ensure text is white */
+}
+
+.option-label {
+  background-color: #000;
+  padding: 4px 10px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+/* Button */
+button {
+  margin-top: 1.5rem;
   padding: 0.5rem 1rem;
   font-weight: bold;
-  background: #007BFF;
-  color: white;
+  background: #00f7ff;
+  color: #000;
   border: none;
-  border-radius: 6px;
+  border-radius: 999px;
   cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background: #00e6e0;
 }
 
 button:disabled {
-  background: #ccc;
+  background: #444;
+  color: #999;
   cursor: not-allowed;
+}
+
+/* Correct Answers */
+.answers {
+  margin-top: 1rem;
+  background-color: #151515;
+  padding: 0.8rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: #80ff80;
 }
